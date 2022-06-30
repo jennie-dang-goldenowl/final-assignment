@@ -13,12 +13,12 @@
             {% endif %}
         </div>
         <div class="quick-actions position-absolute top-0 end-0">
-            <div class="row me-1 my-1">
+            {% comment %} <div class="row me-1 my-1">
                 <div class="d-flex justify-content-center align-items-center bg-warning rounded-circle action-container view-product-btn" product-id="{{item.id}}">
                     <i class="fa fa-eye" aria-hidden="true"></i>    
                 </div>
-            </div>
-            <div class="row me-1 my-1">
+            </div> {% endcomment %}
+            {% comment %} <div class="row me-1 my-1">
                 <div class="d-flex justify-content-center align-items-center bg-warning rounded-circle action-container like-product-btn" data-fav="{{item.favorited}}" product-id={{item.id}}>
                     {% if item.favorited %}
                     <i class="fa fa-heart text-danger" aria-hidden="true"></i>
@@ -26,7 +26,7 @@
                     <i class="fa fa-heart-o" aria-hidden="true"></i>
                     {% endif %}
                 </div>
-            </div>
+            </div> {% endcomment %}
         </div>
     </div>
     <div class="card-body">
