@@ -1,6 +1,6 @@
 from django.http import HttpResponse, JsonResponse
 from django.shortcuts import redirect
-from ..models import Order, Notification, Category
+from ..models import Order,Category
 from django.utils.timezone import now
 from pytz import all_timezones
 import logging
@@ -12,8 +12,8 @@ def navbar_context(func):
         context['user'] = self.request.user
         if not self.request.user.is_anonymous:
             context['cart_size'] = Order.objects.filter(user=self.request.user, status='Cart').count()
-            context['noti_size'] = Notification.objects.filter(user=self.request.user, status='Unread').count()
-            context['noti'] = context['noti_size'] > 0
+            # context['noti_size'] = Notification.objects.filter(user=self.request.user, status='Unread').count()
+            # context['noti'] = context['noti_size'] > 0
 
             # last access check point
             self.request.user.profile.last_access = now()

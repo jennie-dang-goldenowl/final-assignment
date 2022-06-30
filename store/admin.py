@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import ProductVideo, ProductImage, Category, Product, Store, Order, OrderDetail, Comment, Notification, ProductSale, Profile, Chat, Message, LikedProduct
+from .models import ProductVideo, ProductImage, Category, Product, Store, Order, OrderDetail, Comment, ProductSale, Profile, LikedProduct
 # Register your models here.
 
 @admin.register(ProductVideo)
@@ -13,13 +13,6 @@ class ProductImageAdmin(admin.ModelAdmin):
 class LikedProductAdmin(admin.ModelAdmin):
     list_display = ('user', 'product')
 
-@admin.register(Chat)
-class ChatAdmin(admin.ModelAdmin):
-    list_display = ('user', 'store', 'last_modified')
-
-@admin.register(Message)
-class MessageAdmin(admin.ModelAdmin):
-    list_display = ('chat', 'is_user', 'content', 'image', 'created_at')
 @admin.register(Profile)
 class ProfileAdmin(admin.ModelAdmin):
     list_display = ['user', 'name', 'avatar', 'address', 'phone', 'gender',  'last_access']
@@ -47,10 +40,6 @@ class OrderDetailAdmin(admin.ModelAdmin):
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
     list_display = ['user', 'product', 'rate', 'content', 'created_at']
-
-@admin.register(Notification)
-class NotificationAdmin(admin.ModelAdmin):
-    list_display = ['user', 'status', 'created_at']
 
 @admin.register(ProductSale)
 class ProductSalesAdmin(admin.ModelAdmin):

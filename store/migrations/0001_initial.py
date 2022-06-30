@@ -23,13 +23,13 @@ class Migration(migrations.Migration):
                 ('name', models.CharField(max_length=50)),
             ],
         ),
-        migrations.CreateModel(
-            name='Chat',
-            fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('last_modified', models.DateTimeField(default=django.utils.timezone.now)),
-            ],
-        ),
+        # migrations.CreateModel(
+        #     name='Chat',
+        #     fields=[
+        #         ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+        #         ('last_modified', models.DateTimeField(default=django.utils.timezone.now)),
+        #     ],
+        # ),
         migrations.CreateModel(
             name='Order',
             fields=[
@@ -149,17 +149,17 @@ class Migration(migrations.Migration):
                 ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
             ],
         ),
-        migrations.CreateModel(
-            name='Message',
-            fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('is_user', models.BooleanField(null=True)),
-                ('content', models.CharField(max_length=300)),
-                ('image', models.ImageField(blank=True, upload_to=store.models.get_chat_image_path)),
-                ('created_at', models.DateTimeField(auto_now_add=True)),
-                ('chat', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='store.chat')),
-            ],
-        ),
+        # migrations.CreateModel(
+        #     name='Message',
+        #     fields=[
+        #         ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+        #         ('is_user', models.BooleanField(null=True)),
+        #         ('content', models.CharField(max_length=300)),
+        #         ('image', models.ImageField(blank=True, upload_to=store.models.get_chat_image_path)),
+        #         ('created_at', models.DateTimeField(auto_now_add=True)),
+        #         ('chat', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='store.chat')),
+        #     ],
+        # ),
         migrations.CreateModel(
             name='LikedProduct',
             fields=[
@@ -179,14 +179,14 @@ class Migration(migrations.Migration):
                 ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
             ],
         ),
-        migrations.AddField(
-            model_name='chat',
-            name='store',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='store.store'),
-        ),
-        migrations.AddField(
-            model_name='chat',
-            name='user',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL),
-        ),
+        # migrations.AddField(
+        #     model_name='chat',
+        #     name='store',
+        #     field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='store.store'),
+        # ),
+        # migrations.AddField(
+        #     model_name='chat',
+        #     name='user',
+        #     field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL),
+        # ),
     ]

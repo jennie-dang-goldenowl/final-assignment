@@ -5,13 +5,13 @@ from project.celery import send_email_task
 
 
 from store.views.utils import navbar_context
-from ..models import Order, OrderDetail, Product, Notification
+from ..models import Order, OrderDetail, Product
 from django.contrib.auth.models import User
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import CreateView, DetailView, TemplateView, DeleteView, View, ListView
 from django.utils.translation import gettext_lazy as _
 from typing import *
-from .notification import create_notification
+# from .notification import create_notification
 
 class AddCartView(CreateView):
     model = OrderDetail
@@ -83,7 +83,7 @@ class PurchaseView(LoginRequiredMixin, View):
         try:
             cart.purchase()
             owner = cart.store.owner
-            create_notification(owner, '(Store) New Order', f'You have a new order (#{cart.id})')
+            # create_notification(owner, '(Store) New Order', f'You have a new order (#{cart.id})')
             if owner.email:
                 print('Sending email...')
                 send_email_task.delay(

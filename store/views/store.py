@@ -11,7 +11,6 @@ from store.views.utils import navbar_context
 from ..models import OrderDetail, Product, Store, Order, Comment, ProductSale, ProductImage, ProductVideo, Profile
 from django.http import HttpResponse, HttpResponseBadRequest, HttpResponseNotFound, JsonResponse, HttpResponseForbidden
 from django.contrib.auth.mixins import LoginRequiredMixin
-from .notification import create_notification
 from django.db.models import Count, Avg, Sum
 from ..forms.store import StoreForm
 import math
@@ -377,15 +376,15 @@ class PendingOrderView(LoginRequiredMixin, ListView):
         result = data.get('result', None)
         if order_id and result:
             order = Order.objects.get(id=order_id)
-            if result == 'Accepted':
-                for order_detail in order.orderdetail_set.all():
-                    create_notification(order.user, 'Order Accepted', f'Your order (#{order.id}) has been accepted.')
-            elif result == 'Rejected':
-                for order_detail in order.orderdetail_set.all():
-                    product = order_detail.product
-                    product.quantity += order_detail.quantity
-                    product.save()
-                    create_notification(order.user, 'Order Rejected', f'Your order (#{order.id}) has been rejected.')
+            # if result == 'Accepted':
+            #     for order_detail in order.orderdetail_set.all():
+            #         create_notification(order.user, 'Order Accepted', f'Your order (#{order.id}) has been accepted.')
+            # elif result == 'Rejected':
+            #     for order_detail in order.orderdetail_set.all():
+            #         product = order_detail.product
+            #         product.quantity += order_detail.quantity
+            #         product.save()
+            #         create_notification(order.user, 'Order Rejected', f'Your order (#{order.id}) has been rejected.')
             order.status = result
             order.created_at = timezone.now()
             order.save()
