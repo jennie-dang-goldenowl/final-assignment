@@ -9,23 +9,31 @@
 {% block content %}
 <div class="container my-5">
     <div class="row">
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            </ol>
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="https://salt.tikicdn.com/cache/w1080/ts/banner/ef/38/e2/2daf181b328924c310104e16c0e2598e.png.webp" class="d-block w-100" alt="...">
+                    <img src="https://salt.tikicdn.com/cache/w1080/ts/banner/99/69/2d/d7a7e95c675db4c4071b24b85d9a018b.png.webp" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="https://salt.tikicdn.com/cache/w1080/ts/banner/77/6a/e0/d4f72ea566a9d0e086a9739c92afe218.png.webp" class="d-block w-100" alt="...">
+                    <img src="https://salt.tikicdn.com/cache/w1080/ts/banner/e7/84/12/bf33891bc65f15d23e3ec010e5c2f6f1.png.webp" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="https://salt.tikicdn.com/cache/w1080/ts/banner/35/7b/82/1f615a832be076a16ce976e08c67c046.png.webp" class="d-block w-100" alt="...">
+                    <img src="https://salt.tikicdn.com/cache/w1080/ts/banner/ef/da/3e/f688a722027dd2354ccde5355b863856.png.webp" class="d-block w-100" alt="...">
                 </div>
             </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
     </div>
 </div>
